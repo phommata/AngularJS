@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app="" ng-init="names=[
+{name:'Los Angeles',state:'California'},
+{name:'San Francisco',state:'California'},
+{name:'New York City',state:'New York'}]">
+
+<p>Looping with objects:</p>
+<ul>
+  <li ng-repeat="x in names">
+  {{ x.name + ', ' + x.state }}</li>
+</ul>
+
+</div>
+
+</body>
+</html>

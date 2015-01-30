@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!--
 <style>
 table, th , td  {
   border: 1px solid grey;
@@ -13,22 +14,25 @@ table tr:nth-child(odd)	{
 table tr:nth-child(even) {
   background-color: #ffffff;
 }
-</style>
+</style> 
+-->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
 </head>
 <body>
-<h2>Films</h2>
-<div ng-app="" ng-controller="customersController"> 
+<div class="container">
+	<h2>Films</h2>
+	<div ng-app="" ng-controller="customersController"> 
 
-<table>
-  <tr ng-repeat="x in titles">
-    <td>{{ x.title }}</td>
-    <td>{{ x.release_year }}</td>
-  </tr>
-</table>
+	<table class="table table-striped">
+	  <tr ng-repeat="x in titles">
+	    <td>{{ x.title }}</td>
+	    <td>{{ x.release_year }}</td>
+	  </tr>
+	</table>
 
-</div>
-
+	</div>
+</div> // container
 <script>
 function customersController($scope,$http) {
   $http.get("films_mysql.php")

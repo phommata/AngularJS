@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd)	{
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+<body>
+<h2>Films</h2>
+<div ng-app="" ng-controller="customersController"> 
+
+<table>
+  <tr ng-repeat="x in titles">
+    <td>{{ x.title }}</td>
+    <td>{{ x.release_year }}</td>
+  </tr>
+</table>
+
+</div>
+
+<script>
+function customersController($scope,$http) {
+  $http.get("films_mysql.php")
+  .success(function(response) {$scope.titles = response;});
+}
+</script>
+
+</body>
+</html>
